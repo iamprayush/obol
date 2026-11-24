@@ -1,0 +1,225 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "cbac7124b86cc02bdb61ffd3925da1c9",
+    "entities": [
+      {
+        "tableName": "morning_headers",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`morningId` TEXT NOT NULL, `calendarDate` TEXT NOT NULL, `scheduledAtEpochMs` INTEGER NOT NULL, `isTrialDay` INTEGER NOT NULL, `isGraceNight` INTEGER NOT NULL, `hadPriorDebt` INTEGER NOT NULL, `priorMonthChargedPaise` INTEGER NOT NULL, PRIMARY KEY(`morningId`))",
+        "fields": [
+          {
+            "fieldPath": "morningId",
+            "columnName": "morningId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "calendarDate",
+            "columnName": "calendarDate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "scheduledAtEpochMs",
+            "columnName": "scheduledAtEpochMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isTrialDay",
+            "columnName": "isTrialDay",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isGraceNight",
+            "columnName": "isGraceNight",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hadPriorDebt",
+            "columnName": "hadPriorDebt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "priorMonthChargedPaise",
+            "columnName": "priorMonthChargedPaise",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "morningId"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "morning_events",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `morningId` TEXT NOT NULL, `seq` INTEGER NOT NULL, `atEpochMs` INTEGER NOT NULL, `bootCount` INTEGER NOT NULL, `elapsedMs` INTEGER NOT NULL, `payloadJson` TEXT NOT NULL, FOREIGN KEY(`morningId`) REFERENCES `morning_headers`(`morningId`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "morningId",
+            "columnName": "morningId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "seq",
+            "columnName": "seq",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "atEpochMs",
+            "columnName": "atEpochMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bootCount",
+            "columnName": "bootCount",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "elapsedMs",
+            "columnName": "elapsedMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "payloadJson",
+            "columnName": "payloadJson",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_morning_events_morningId_seq",
+            "unique": true,
+            "columnNames": [
+              "morningId",
+              "seq"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_morning_events_morningId_seq` ON `${TABLE_NAME}` (`morningId`, `seq`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "morning_headers",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "morningId"
+            ],
+            "referencedColumns": [
+              "morningId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "alarm_slots",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`dayOfWeek` INTEGER NOT NULL, `activeEnabled` INTEGER NOT NULL, `activeHour` INTEGER NOT NULL, `activeMinute` INTEGER NOT NULL, `pendingJson` TEXT, PRIMARY KEY(`dayOfWeek`))",
+        "fields": [
+          {
+            "fieldPath": "dayOfWeek",
+            "columnName": "dayOfWeek",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "activeEnabled",
+            "columnName": "activeEnabled",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "activeHour",
+            "columnName": "activeHour",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "activeMinute",
+            "columnName": "activeMinute",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pendingJson",
+            "columnName": "pendingJson",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "dayOfWeek"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "grace_nights",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`scheduledAtEpochMs` INTEGER NOT NULL, `calendarMonth` TEXT NOT NULL, `declaredAtEpochMs` INTEGER NOT NULL, PRIMARY KEY(`scheduledAtEpochMs`))",
+        "fields": [
+          {
+            "fieldPath": "scheduledAtEpochMs",
+            "columnName": "scheduledAtEpochMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "calendarMonth",
+            "columnName": "calendarMonth",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "declaredAtEpochMs",
+            "columnName": "declaredAtEpochMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "scheduledAtEpochMs"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'cbac7124b86cc02bdb61ffd3925da1c9')"
+    ]
+  }
+}

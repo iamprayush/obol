@@ -1,0 +1,14 @@
+.gradle/
+.kotlin/
+**/build/
+local.properties
+*.apk
+*.aab
+*.jks
+*.keystore
+signing.properties
+.idea/
+*.iml
+.DS_Store
+app/roborazzi/*_compare.png
+app/roborazzi/*_actual.png

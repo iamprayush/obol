@@ -1,0 +1,207 @@
+{
+ "screens": [
+  [
+   "01-welcome",
+   "Welcome",
+   "Setup"
+  ],
+  [
+   "02-permissions",
+   "Permissions",
+   "Setup"
+  ],
+  [
+   "03-alarms",
+   "Alarms",
+   "Setup"
+  ],
+  [
+   "04-home",
+   "Home",
+   "Night"
+  ],
+  [
+   "05-home-unpaid",
+   "Home, unpaid",
+   "Night"
+  ],
+  [
+   "06-home-night-off",
+   "Home, night off",
+   "Night"
+  ],
+  [
+   "07-home-paused",
+   "Home, paused",
+   "Night"
+  ],
+  [
+   "08-alarm-free",
+   "Alarm, free minutes",
+   "Morning"
+  ],
+  [
+   "09-meter",
+   "Meter running",
+   "Morning"
+  ],
+  [
+   "09b-meter-no-free",
+   "Meter running, no free minutes",
+   "Morning"
+  ],
+  [
+   "10-snoozed",
+   "Snoozed",
+   "Morning"
+  ],
+  [
+   "11-ring-again",
+   "Rings again",
+   "Morning"
+  ],
+  [
+   "12-capped",
+   "Capped",
+   "Morning"
+  ],
+  [
+   "13-trial",
+   "Trial week",
+   "Morning"
+  ],
+  [
+   "14-brushing",
+   "Brushing, seen",
+   "Brushing"
+  ],
+  [
+   "15-brushing-lost",
+   "Brushing, not seen",
+   "Brushing"
+  ],
+  [
+   "16-override",
+   "Camera not working",
+   "Brushing"
+  ],
+  [
+   "17-pay",
+   "Pay",
+   "After"
+  ],
+  [
+   "17b-pay-failed",
+   "Payment failed",
+   "After"
+  ],
+  [
+   "18-nothing-owed",
+   "Nothing owed",
+   "After"
+  ],
+  [
+   "19-face-check-wait",
+   "Face check, waiting",
+   "After"
+  ],
+  [
+   "20-face-check",
+   "Face check",
+   "After"
+  ],
+  [
+   "21-face-check-missed",
+   "Face check, missed",
+   "After"
+  ],
+  [
+   "22-closed",
+   "Morning closed",
+   "After"
+  ],
+  [
+   "23-closed-free",
+   "Morning closed, free",
+   "After"
+  ],
+  [
+   "24-not-rung",
+   "Alarm didn't ring",
+   "After"
+  ],
+  [
+   "25-history",
+   "History",
+   "Daylight"
+  ],
+  [
+   "26-bill",
+   "The full bill",
+   "Daylight"
+  ],
+  [
+   "27-settings",
+   "Settings",
+   "Daylight"
+  ]
+ ],
+ "esc": [
+  "esc-000",
+  "esc-060",
+  "esc-150",
+  "esc-240",
+  "esc-300"
+ ],
+ "stages": {
+  "0": {
+   "bg": "#0F1730",
+   "h1": "#161F45",
+   "h2": "#121A3A",
+   "sun": "#FF7A2F",
+   "ink": "#F6EBD9"
+  },
+  "60": {
+   "bg": "#221830",
+   "h1": "#512A3C",
+   "h2": "#35203A",
+   "sun": "#FF7A2F",
+   "ink": "#F6EBD9"
+  },
+  "90": {
+   "bg": "#2B1930",
+   "h1": "#6E3038",
+   "h2": "#47233A",
+   "sun": "#FF7A2F",
+   "ink": "#F6EBD9"
+  },
+  "150": {
+   "bg": "#58262E",
+   "h1": "#9E4332",
+   "h2": "#783333",
+   "sun": "#FF7A2F",
+   "ink": "#F6EBD9"
+  },
+  "195": {
+   "bg": "#7A2F2C",
+   "h1": "#C2522E",
+   "h2": "#9C3F2E",
+   "sun": "#FF7A2F",
+   "ink": "#F6EBD9"
+  },
+  "240": {
+   "bg": "#B36E4D",
+   "h1": "#DC713A",
+   "h2": "#C66F45",
+   "sun": "#FF6C28",
+   "ink": "#0F1730"
+  },
+  "300": {
+   "bg": "#FFC27A",
+   "h1": "#FF9A4A",
+   "h2": "#FFAF63",
+   "sun": "#FF5A1F",
+   "ink": "#0F1730"
+  }
+ }
+}
