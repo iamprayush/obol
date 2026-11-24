@@ -18,11 +18,11 @@
 ## Product Demo Video
 
 <p align="center">
-  <a href="https://github.com/iamprayush/obol/blob/main/Obol%20-%20Product%20Feature.mp4">
+  <a href="https://iamprayush.github.io/obol/docs/demo/">
     <img src="docs/media/video-thumbnail.png" width="760" alt="Watch Obol Product Feature Video (0:57)" />
   </a>
   <br />
-  <sub><a href="https://github.com/iamprayush/obol/blob/main/Obol%20-%20Product%20Feature.mp4">Watch <code>Obol - Product Feature.mp4</code> (0:57)</a> · <a href="./Obol%20-%20Product%20Feature.mp4">Direct file in repository</a></sub>
+  <sub><a href="https://iamprayush.github.io/obol/docs/demo/"><strong>▶ Play Demo Video (0:57)</strong></a> · <a href="https://iamprayush.github.io/obol/Obol%20-%20Product%20Feature.mp4">Direct MP4 Stream</a></sub>
 </p>
 
 The product walkthrough video demonstrates the complete morning loop on device:
@@ -30,8 +30,6 @@ The product walkthrough video demonstrates the complete morning loop on device:
 2. **Live Sunrise Meter** — sky heats from ink navy to apricot as charges climb at ₹20/minute (snooze quiets audio only).
 3. **On-Device Brushing Proof** — CameraX + ML Kit Face + MediaPipe `efficientdet_lite0` verify 10 seconds of toothbrushing near the mouth with motion, pausing the meter immediately.
 4. **Itemized Bill & Charity Checkout** — deterministic event-sourced breakdown settled via Oppia Donorbox or Indian UPI.
-
-> *Note: GitHub's README renderer does not auto-play raw `.mp4` files committed to Git (inline players are only generated for web-uploaded `user-attachments`). Click the link above to view or download [`Obol - Product Feature.mp4`](./Obol%20-%20Product%20Feature.mp4) directly from GitHub.*
 
 ---
 

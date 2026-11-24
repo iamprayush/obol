@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Obol — Product Feature Demo</title>
+  <meta name="description" content="Obol Android commitment alarm clock product walkthrough video (0:57)." />
+  <style>
+    :root {
+      --navy: #10152B;
+      --surface: #171E3A;
+      --cream: #F8F4EC;
+      --muted: rgba(248, 244, 236, 0.68);
+      --sun: #FF7A2F;
+      --border: rgba(248, 244, 236, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 50% 100%, rgba(255, 122, 47, 0.22), transparent 55%),
+        linear-gradient(180deg, #0D1224 0%, var(--navy) 60%, #1B1D34 100%);
+      color: var(--cream);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px 32px;
+    }
+
+    .shell {
+      width: 100%;
+      max-width: 1024px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+
+    .brand h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .brand span {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-decoration: none;
+      color: var(--cream);
+      background: rgba(248, 244, 236, 0.08);
+      border: 1px solid var(--border);
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+
+    .btn:hover {
+      background: rgba(248, 244, 236, 0.15);
+      border-color: rgba(248, 244, 236, 0.3);
+    }
+
+    .btn-primary {
+      background: var(--cream);
+      color: var(--navy);
+      border-color: transparent;
+    }
+
+    .btn-primary:hover {
+      background: #ffffff;
+    }
+
+    .player-wrap {
+      position: relative;
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #060914;
+      border: 1px solid var(--border);
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55);
+    }
+
+    video {
+      display: block;
+      width: 100%;
+      max-height: 76vh;
+      background: #060914;
+    }
+
+    .unmute-pill {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      display: none;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 122, 47, 0.7);
+      background: rgba(16, 21, 43, 0.88);
+      color: var(--cream);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+    }
+
+    .unmute-pill.visible {
+      display: inline-flex;
+    }
+
+    .unmute-pill:hover {
+      background: var(--sun);
+      color: var(--navy);
+    }
+
+    footer {
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div class="brand">
+        <h1>Obol</h1>
+        <span>Product Feature Walkthrough · 0:57</span>
+      </div>
+      <div class="actions">
+        <a class="btn" href="/obol/Obol%20-%20Product%20Feature.mp4" download>Download MP4</a>
+        <a class="btn btn-primary" href="https://github.com/iamprayush/obol">← Back to GitHub</a>
+      </div>
+    </header>
+
+    <div class="player-wrap">
+      <video
+        id="demo-video"
+        controls
+        autoplay
+        playsinline
+        preload="auto"
+        poster="/obol/docs/media/video-thumbnail.png"
+      >
+        <source src="/obol/Obol%20-%20Product%20Feature.mp4" type="video/mp4" />
+        Your browser does not support HTML5 video.
+        <a href="/obol/Obol%20-%20Product%20Feature.mp4">Open the MP4 directly</a>.
+      </video>
+
+      <button id="unmute-btn" class="unmute-pill" type="button" aria-label="Unmute video">
+        🔊 Sound muted by browser — click to unmute
+      </button>
+    </div>
+
+    <footer>
+      5 free minutes, then ₹20/minute — stopped only by 10 seconds of on-device camera-verified toothbrushing.
+    </footer>
+  </main>
+
+  <script>
+    (function () {
+      const video = document.getElementById("demo-video");
+      const unmuteBtn = document.getElementById("unmute-btn");
+
+      function hideUnmute() {
+        unmuteBtn.classList.remove("visible");
+      }
+
+      unmuteBtn.addEventListener("click", function () {
+        video.muted = false;
+        video.volume = 1.0;
+        video.play().catch(function () {});
+        hideUnmute();
+      });
+
+      video.addEventListener("volumechange", function () {
+        if (!video.muted && video.volume > 0) {
+          hideUnmute();
+        }
+      });
+
+      // Attempt unmuted playback first; if blocked by browser autoplay policy,
+      // start immediately muted and display an explicit one-click unmute pill.
+      const playAttempt = video.play();
+      if (playAttempt && typeof playAttempt.catch === "function") {
+        playAttempt.catch(function () {
+          video.muted = true;
+          video.play()
+            .then(function () {
+              unmuteBtn.classList.add("visible");
+            })
+            .catch(function () {});
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
