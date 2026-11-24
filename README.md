@@ -4,18 +4,26 @@
 
 **Obol** (`dev.prayush.obol`) is a personal, zero-server native Android commitment alarm clock built with Kotlin and Jetpack Compose. It gives you **5 free minutes** when your alarm rings, then runs a continuous live meter at **₹20/minute** (₹1 every 3 seconds). Snoozing silences the chime for 5 minutes — **it does not stop the meter**. The meter only stops when the front camera verifies **10 seconds of brushing your teeth** on-device, and accumulated charges are donated to charity via **Oppia Donorbox** or **Indian UPI**.
 
-![Kotlin](https://img.shields.io/badge/Kotlin-2.0.21-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
-![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-Material%203-4285F4?style=flat-square&logo=jetpackcompose&logoColor=white)
-![Android](https://img.shields.io/badge/Android-API%2031--35-3DDC84?style=flat-square&logo=android&logoColor=white)
-![Storage](https://img.shields.io/badge/Room%20v2%20%2B%20DataStore-Direct%20Boot-0F172A?style=flat-square)
-![Vision](https://img.shields.io/badge/CameraX%20%2B%20ML%20Kit%20%2B%20MediaPipe-On--Device-FF6F00?style=flat-square)
-![Privacy](https://img.shields.io/badge/Server-Zero%20%7C%20No%20INTERNET%20Permission-16A34A?style=flat-square)
+<p>
+  <img src="docs/media/badges/kotlin.svg" alt="Kotlin: 2.0.21" />&nbsp;
+  <img src="docs/media/badges/compose.svg" alt="Jetpack Compose: Material 3" />&nbsp;
+  <img src="docs/media/badges/android.svg" alt="Android: API 31–35" />&nbsp;
+  <img src="docs/media/badges/storage.svg" alt="Room v2 + DataStore: Direct Boot" />&nbsp;
+  <img src="docs/media/badges/vision.svg" alt="On-Device Vision: CameraX · ML Kit · MediaPipe" />&nbsp;
+  <img src="docs/media/badges/privacy.svg" alt="Zero-Server: No INTERNET Permission" />
+</p>
 
 ---
 
 ## Product Demo Video
 
-**[Watch `Obol - Product Feature.mp4`](https://github.com/iamprayush/obol/blob/main/Obol%20-%20Product%20Feature.mp4)** · [Direct file in repository](./Obol%20-%20Product%20Feature.mp4)
+<p align="center">
+  <a href="https://github.com/iamprayush/obol/blob/main/Obol%20-%20Product%20Feature.mp4">
+    <img src="docs/media/video-thumbnail.png" width="760" alt="Watch Obol Product Feature Video (0:57)" />
+  </a>
+  <br />
+  <sub><a href="https://github.com/iamprayush/obol/blob/main/Obol%20-%20Product%20Feature.mp4">Watch <code>Obol - Product Feature.mp4</code> (0:57)</a> · <a href="./Obol%20-%20Product%20Feature.mp4">Direct file in repository</a></sub>
+</p>
 
 The product walkthrough video demonstrates the complete morning loop on device:
 1. **Alarm & Free Window** — full-screen alarm over lock screen with a 5-minute grace window.

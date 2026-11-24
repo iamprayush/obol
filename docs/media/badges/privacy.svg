@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="268" height="24" role="img" aria-label="Zero-Server: No INTERNET Permission">
+  <title>Zero-Server: No INTERNET Permission</title>
+  <clipPath id="r">
+    <rect width="268" height="24" rx="4" fill="#fff"/>
+  </clipPath>
+  <g clip-path="url(#r)">
+    <rect width="96" height="24" fill="#1E253D"/>
+    <rect x="96" width="172" height="24" fill="#16A34A"/>
+    <rect width="268" height="24" fill="url(#s)"/>
+  </g>
+  <linearGradient id="s" x2="0" y2="100%">
+    <stop offset="0" stop-color="#fff" stop-opacity=".08"/>
+    <stop offset="1" stop-color="#000" stop-opacity=".12"/>
+  </linearGradient>
+  <g fill="#F8F4EC" text-anchor="middle" font-family="'DejaVu Sans','Segoe UI',Verdana,Geneva,sans-serif" font-size="11" font-weight="600">
+    <text x="48.0" y="16">Zero-Server</text>
+    <text x="182.0" y="16">No INTERNET Permission</text>
+  </g>
+</svg>
